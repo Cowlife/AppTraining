@@ -1,0 +1,36 @@
+<div class="card text-themecolor">
+  <div class="container">
+    <!-- Row  -->
+    <div class="row justify-content-center">
+      <!-- Column -->
+      <div class="col-lg-9 col-md-6 align-self-center text-center no-trans">
+        <h1 class="layout-topbar-logo text-themecolor" ><b>POKEMON MANAGER</b></h1>
+        <h3 >A simple yet effective pokemon manager.</h3>
+      </div>
+      <!-- Column -->
+    </div>
+  </div>
+</div>
+
+<!-- Row  -->
+<div class="container spacer">
+  <div class="justify-content-center grid">
+    <!-- Column -->
+    <div class="no-trans col-4" *ngFor="let bl of service.Blogs">
+      <div class="card text-center">
+        <div class="justify-content-center">
+          <div class="no-trans">
+            <h5 class="font-medium cursor-pointer">{{ bl.heading.substring(0, 50) }}</h5>
+            <img [src]="bl?.image" width="75" height="75" alt="wrapkit" class="img-fluid" />
+          </div>
+          <div class="no-trans">
+            <a class="linking font-medium text-themecolor cursor-pointer">
+              <span (click)="viewDetail(bl.id)">Show Detail</span>
+              <i class="pi pi-question-circle" style="margin-left: 5px"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div id="layout-config" class="layout-config" [ngClass]="{'layout-config-active': appMain.configActive}" (click)="appMain.onConfigClick($event)">
+        <a style="cursor: pointer" id="layout-config-button" class="layout-config-button" (click)="onConfigButtonClick($event)">
+            <i class="pi pi-cog"></i>
+        </a>
+        <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-text layout-config-close" (click)="onConfigButtonClick($event)"></button>
+        <div class="layout-config-content">
+            <h6 class="mt-0">Component Scale</h6>
+            <div class="config-scale">
+                <button pButton pRipple type="button" icon="pi pi-minus" (click)="decrementScale()" class="p-button-rounded p-button-text" [disabled]="scale === scales[0]"></button>
+                    <i *ngFor="let item of scales" class="pi pi-circle-fill" [ngClass]="{'scale-active': item === scale}"></i>
+                <button pButton pRipple type="button" icon="pi pi-plus" (click)="incrementScale()" class="p-button-rounded p-button-text" [disabled]="scale === scales[scales.length - 1]"></button>
+            </div>
+
+            <h6>Input Style</h6>
+            <div class="p-formgroup-inline">
+                <div class="field-radiobutton">
+                    <p-radioButton name="inputStyle" value="outlined" [(ngModel)]="config.inputStyle" (onClick)="onInputStyleChange()"
+                                   inputId="inputStyle1"></p-radioButton>
+                    <label for="inputStyle1">Outlined</label>
+                </div>
+                <div class="field-radiobutton">
+                    <p-radioButton name="inputStyle" value="filled" [(ngModel)]="config.inputStyle" (onClick)="onInputStyleChange()"
+                                   inputId="inputStyle2"></p-radioButton>
+                    <label for="inputStyle2">Filled</label>
+                </div>
+            </div>
+
+            <h6>Ripple Effect</h6>
+            <p-inputSwitch [ngModel]="config.ripple" (onChange)="onRippleChange($event.checked)"></p-inputSwitch>
+
+            <h6>Changing Theme</h6>
+            <div class="grid free-themes">
+                <div class="col-6">
+                    <button class="p-link" (click)="changeTheme('saga-blue', false)">
+                        <img src="../../assets/layout/images/themes/saga-blue.png" alt="Saga Blue">
+                    </button>
+                    <button class="p-link" (click)="changeTheme('lara-dark-teal', false)">
+                        <img src="../../assets/layout/images/themes/lara-dark-teal.png" alt="Saga Blue">
+                    </button>
+                    <button class="p-link" (click)="changeTheme('vela-orange', false)">
+                        <img src="../../assets/layout/images/themes/vela-orange.png" alt="Saga Blue">
+                    </button>
+                    <button class="p-link" (click)="changeTheme('tailwind-light', false)">
+                        <img src="../../assets/layout/images/themes/tailwind-light.png" alt="Saga Blue">
+                    </button>
+                    <button class="p-link" (click)="changeTheme('md-light-indigo', false)">
+                        <img src="../../assets/layout/images/themes/md-light-indigo.svg" alt="Saga Blue">
+                    </button>
+                    <button class="p-link" (click)="changeTheme('md-dark-deeppurple', false)">
+                        <img src="../../assets/layout/images/themes/md-dark-deeppurple.svg" alt="Saga Blue">
+                    </button>
+                    <button class="p-link" (click)="changeTheme('lara-light-purple', false)">
+                        <img src="../../assets/layout/images/themes/lara-light-purple.png" alt="Saga Blue">
+                    </button>
+                    <button class="p-link" (click)="changeTheme('fluent-light', false)">
+                        <img src="../../assets/layout/images/themes/fluent-light.png" alt="Saga Blue">
+                    </button>
+                    <button class="p-link" (click)="changeTheme('arya-green', false)">
+                        <img src="../../assets/layout/images/themes/arya-green.png" alt="Saga Blue">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>

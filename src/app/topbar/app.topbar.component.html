@@ -1,0 +1,35 @@
+<div class="layout-topbar">
+    <a class="layout-topbar-logo" href="https://bulbapedia.bulbagarden.net/wiki/Main_Page">
+        <!--<img src="assets/layout/images/{{appMain.config.dark ? 'logo-white' : 'logo-dark'}}.svg" alt="logo">-->
+        <img src="../../assets/layout/images/new/bulbasaur_icon-icons.com_67580.svg" alt="logo">
+        <span>BULBAPEDIA</span>
+    </a>
+    <a class="p-link layout-menu-button layout-topbar-button" href="#" (click)="appMain.toggleMenu($event)">
+        <i class="pi pi-bars"></i>
+    </a>
+    <a class="p-link layout-menu-button layout-topbar-button" routerLink="/">
+        <i class="pi pi-home"></i>
+    </a>
+    <a class="p-link layout-topbar-menu-button layout-topbar-button" href="#" (click)="appMain.toggleTopMenu($event)">
+        <i class="pi pi-ellipsis-v"></i>
+    </a>
+
+    <div class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active':appMain.topMenuActive}">
+        <a routerLink="teambuilder" class="p-link layout-topbar-button">
+            <i class="pi pi-user-edit"></i>
+            <span>Teambuilder</span>
+        </a>
+        <a routerLink="blog" class="p-link layout-topbar-button">
+            <i class="pi pi-calendar"></i>
+            <span>Calendar</span>
+        </a>
+        <a routerLink="uikit/charts" class="p-link layout-topbar-button">
+            <i class="pi pi-chart-bar"></i>
+            <span>Charts</span>
+        </a>
+        <a href="#" class="p-link layout-topbar-button">
+            <i class="pi pi-user"></i>
+            <span>Profile</span>
+        </a>
+    </div>
+</div>
