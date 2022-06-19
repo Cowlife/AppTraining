@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
     apiUrl: "https://www.primefaces.org/data/customers",
+    apiUrl2: 'https://pokeapi.co/api/v2'
 };
 
 /*

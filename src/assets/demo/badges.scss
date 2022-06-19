@@ -11,7 +11,17 @@
         color: #256029;
     }
 
+    &.status-captured {
+        background: #C8E6C9;
+        color: #256029;
+    }
+
     &.status-outofstock {
+        background: #FFCDD2;
+        color: #C63737;
+    }
+
+    &.status-not_captured {
         background: #FFCDD2;
         color: #C63737;
     }

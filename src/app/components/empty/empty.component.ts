@@ -30,6 +30,9 @@ export class EmptyComponent {
 
     test = '/sunmoon/pokemon/';
 
+    shiny = ['Shiny Forms', 'pi pi-heart'];
+
+
     rowsPerPageOptions = [5, 10, 20];
 
     constructor(private productService: ProductService, private messageService: MessageService,
@@ -47,19 +50,22 @@ export class EmptyComponent {
         ];
 
         this.statuses = [
-            {label: 'INSTOCK', value: 'instock'},
-            {label: 'LOWSTOCK', value: 'lowstock'},
-            {label: 'OUTOFSTOCK', value: 'outofstock'},
+            {label: 'CAPTURED', value: 'instock'},
+            {label: 'NOT CAPTURED', value: 'outofstock'},
         ];
     }
 
     openNew() {
         if(this.test == '/sunmoon/pokemon/'){
-            this.test = '/Shiny/SM/'
+            this.test = '/Shiny/SM/';
+            this.shiny[0] = 'Normal Forms';
+            this.shiny[1] = 'pi pi-upload';
         }
 
         else if(this.test == '/Shiny/SM/'){
-            this.test = '/sunmoon/pokemon/'
+            this.test = '/sunmoon/pokemon/';
+            this.shiny[0] = 'Shiny Forms';
+            this.shiny[1] = 'pi pi-heart';
         }
     }
 

@@ -6,7 +6,7 @@
             <p-toolbar styleClass="mb-4">
                 <ng-template pTemplate="left">
                     <div class="my-2">
-                        <button pButton pRipple label="Shiny Forms" icon="pi pi-heart" class="p-button-success mr-2" (click)="openNew()"></button>
+                        <button pButton pRipple [label]="shiny[0]" [icon]="shiny[1]" class="p-button-success mr-2" (click)="openNew()"></button>
 <!--                        <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>-->
                     </div>
                 </ng-template>
@@ -37,8 +37,9 @@
                         <th>Image</th>
                         <th pSortableColumn="price">Next Evolution<p-sortIcon field="price"></p-sortIcon></th>
                         <th style="width: 4rem" pSortableColumn="category">Evolution Status<p-sortIcon field="category"></p-sortIcon></th>
-                        <th pSortableColumn="rating">Reviews <p-sortIcon field="rating"></p-sortIcon></th>
+                        <th pSortableColumn="rating">Generation<p-sortIcon field="rating"></p-sortIcon></th>
                         <th pSortableColumn="inventoryStatus">Status <p-sortIcon field="inventoryStatus"></p-sortIcon></th>
+                        <th > Information </th>
                         <th></th>
                     </tr>
                 </ng-template>
@@ -66,14 +67,14 @@
                             {{product.category}}
                         </td>
                         <td style="width:14%; min-width: 10rem;"><span class="p-column-title">Reviews</span>
-                            <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
+                            <p-rating [ngModel]="product.rating" stars="8" [readonly]="true" [cancel]="false"></p-rating>
                         </td>
                         <td style="width:14%; min-width: 10rem;"><span class="p-column-title">Status</span>
-                            <span [class]="'product-badge status-' + (product.inventoryStatus ? product.inventoryStatus.toLowerCase() : '')">{{product.inventoryStatus}}</span>
+                            <span [class]="'product-badge status-' + (product.inventoryStatus)">{{product.inventoryStatus.replaceAll('_', ' ')}}</span>
                         </td>
                         <td>
                             <div class="flex">
-                                <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="editProduct(product)"></button>
+                                <button pButton pRipple icon="pi pi-question" class="p-button-rounded p-button-success mr-2" (click)="editProduct(product)"></button>
 <!--                                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>-->
                             </div>
                         </td>
